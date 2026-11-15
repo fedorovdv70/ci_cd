@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Движки сайтов (CMS): виды и классификация</title>
+    <style>
+        :root {
+            --bg-color: #f4f7f9;
+            --text-color: #2c3e50;
+            --primary-color: #3498db;
+            --secondary-color: #2980b9;
+            --card-bg: #ffffff;
+            --border-color: #e1e8ed;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: #fff;
+            padding: 3rem 1.5rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        nav {
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        section {
+            margin-bottom: 3rem;
+        }
+
+        h2 {
+            font-size: 1.6rem;
+            margin-bottom: 1.2rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-color);
+            display: inline-block;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.8rem;
+            font-size: 1.25rem;
+        }
+
+        .card ul {
+            margin-top: 0.8rem;
+            padding-left: 1.2rem;
+        }
+
+        .card li {
+            margin-bottom: 0.4rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: #e8f4fd;
+            color: var(--secondary-color);
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            margin-bottom: 0.8rem;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th, td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: #f8fafc;
+            font-weight: 600;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            font-size: 0.9rem;
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Движки сайтов (CMS)</h1>
+        <p>Подробный гид о том, какие бывают системы управления контентом, на какие категории они делятся и как выбрать подходящую.</p>
+    </header>
+
+    <nav>
+        <a href="#licensing">По типу лицензии</a>
+        <a href="#purpose">По назначению</a>
+        <a href="#architecture">По архитектуре</a>
+        <a href="#comparison">Сравнительная таблица</a>
+    </nav>
+
+    <main>
+        <section id="licensing">
+            <h2>1. Деление по типу лицензии и модели распространения</h2>
+            <div class="grid">
+                <div class="card">
+                    <span class="badge">Open Source</span>
+                    <h3>Бесплатные (Коробочные)</h3>
+                    <p>Имеют открытый исходный код. Их можно скачать бесплатно, установить на свой хостинг и менять как угодно.</p>
+                    <ul>
+                        <li><strong>WordPress</strong> — лидер рынка для блогов и сайтов услуг.</li>
+                        <li><strong>Joomla!</strong> — для корпоративных порталов.</li>
+                        <li><strong>Drupal</strong> — для сложных и нагруженных проектов.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <span class="badge">Commercial</span>
+                    <h3>Платные (Коробочные)</h3>
+                    <p>Требуют покупки лицензии. Обычно предлагают официальную техподдержку, высокий уровень защиты и готовые модули.</p>
+                    <ul>
+                        <li><strong>1С-Битрикс</strong> — стандарт для e-commerce и бизнеса в СНГ.</li>
+                        <li><strong>DataLife Engine (DLE)</strong> — популярный движок для новостных порталов.</li>
+                        <li><strong>MODX (платные сборки)</strong> — гибкий инструмент для студий.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <span class="badge">Облачные платформы</span>
+                    <h3>Конструкторы (SaaS)</h3>
+                    <p>Работают по подписке. Не нужно покупать хостинг и настраивать сервер — всё работает в браузере из коробки.</p>
+                    <ul>
+                        <li><strong>Tilda</strong> — идеален для лендингов и портфолио.</li>
+                        <li><strong>InSales</strong> — облачный движок для интернет-магазинов.</li>
+                        <li><strong>Shopify</strong> — мировой лидер облачной коммерции.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <span class="badge">Custom</span>
+                    <h3>Самописные (Фреймворки)</h3>
+                    <p>Разрабатываются с нуля под конкретный уникальный проект. Не имеют готовой админки, всё пишется программистами.</p>
+                    <ul>
+                        <li><strong>Laravel / Symfony</strong> (PHP)</li>
+                        <li><strong>Django</strong> (Python)</li>
+                        <li><strong>Next.js / NestJS</strong> (JavaScript/TypeScript)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="purpose">
+            <h2>2. Деление по назначению</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Универсальные CMS</h3>
+                    <p>Подходят для создания сайтов практически любого типа: от визитки до СМИ или небольшого магазина с помощью плагинов.</p>
+                    <ul>
+                        <li>WordPress, MODX, Joomla!</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>E-commerce (Интернет-магазины)</h3>
+                    <p>Заточены под торговлю: есть корзина, фильтры товаров, интеграция с 1С, онлайн-кассами и службами доставки.</p>
+                    <ul>
+                        <li>OpenCart, 1С-Битрикс, Magento, PrestaShop.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>Блоги и медиа-порталы</h3>
+                    <p>Оптимизированы для работы с большим объёмом текстового и медиа-контента, комментариями и SEO.</p>
+                    <ul>
+                        <li>Ghost, WordPress, DataLife Engine.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="architecture">
+            <h2>3. Деление по архитектуре</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Традиционные (Монолитные)</h3>
+                    <p>Бэкенд (база данных, админка) и фронтенд (визуальная часть для пользователя) жёстко связаны в единую систему.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Headless CMS (Безголовые)</h3>
+                    <p>Система отвечает только за хранение контента и отдаёт его через API. Внешний вид можно написать на любом современном фреймворке (React, Vue) или вывести в мобильное приложение.</p>
+                    <ul>
+                        <li>Strapi, Directus, Contentful.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="comparison">
+            <h2>4. Сравнительная таблица популярных решений</h2>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Тип движка</th>
+                            <th>Порог входа</th>
+                            <th>Стоимость запуска</th>
+                            <th>Гибкость доработок</th>
