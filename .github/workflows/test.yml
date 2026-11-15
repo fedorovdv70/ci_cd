@@ -1,0 +1,16 @@
+name: Проверка сайта (CI)
+on: [push]
+
+jobs:
+  check-html:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Скачиваем код проекта
+        uses: actions/checkout@v4
+
+      - name: Проверяем наличие файла и заголовка h1
+        run: |
+          echo "Начинаем проверку..."
+          test -f index.html
+          grep -q "<h1>" index.html
+          echo "Успех! Сайт прошёл проверку."
